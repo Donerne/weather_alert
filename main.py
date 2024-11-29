@@ -4,7 +4,7 @@ from twilio.rest import Client
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-account_sid = "AC8c2513d7bf6da54ede23693275344658"
+account_sid = os.environ.get("ACCOUNT_SID")
 auth_token = os.environ.get("AUTH_TOKEN")
 
 
@@ -51,31 +51,5 @@ for rain_check, description in zip(weather_forecasts, weather_description):
         # print(f"Take an umbrella. Weather description: {description}")
 
         print(message.status)
-
-    # else:
-    #     message = client.messages.create(
-    #         from_="whatsapp:+14155238886",
-    #         body=f"No rain or snow today. Weather description: {description}",
-    #         # from_='+17753207011',
-    #         to="whatsapp:+16473939783")
-
-    #     print(message.status)
-
-        # print(f"No rain or snow today. Weather description: {description}")
-
-
-# will_rain = False
-# for i in range(0, 4):
-#     weather_data = response.json()['list'][i]['weather'][0]["id"]
-#     weather_forecasts.append(weather_data)
-
-
-# for rain_check in weather_forecasts:
-#     if int(rain_check) < 700:
-#         will_rain = True
-#     else:
-#         print("No rain today.")
-# if will_rain:
-#     print('Bring an umbrella')
 
 
