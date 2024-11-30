@@ -13,8 +13,8 @@ api_key = os.environ.get("OWM_API_KEY")
 
 # Guelph lat long locations
 weather_params = {
-    'lat': 43.544804,
-    'lon': -80.248169,
+    'lat': 43.544811,
+    'lon': -80.248108,
     'appid': api_key,
     'cnt': 4
 }
@@ -44,7 +44,7 @@ for rain_check, description in zip(weather_forecasts, weather_description):
 
         message = client.messages.create(
             from_="whatsapp:+14155238886",
-            body=f"Take an umbrella or good winter clothes. There is Weather description: {description}",
+            body=f"Take an umbrella or good winter clothes. There is {description}",
             # from_='+17753207011',
             to="whatsapp:+16473939783")
 
